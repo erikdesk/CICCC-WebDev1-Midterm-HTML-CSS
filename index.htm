@@ -1,0 +1,2245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HotelBook: Find hotels and book from around the world.</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Hotel, Travel, Booking" />
+    <meta name="author" content="HotelBook" />
+    <meta
+      name="description"
+      content="HotelBook: Find hotels and book from around the world."
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="ico/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="ico/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="ico/favicon-16x16.png"
+    />
+    <link rel="manifest" href="ico/site.webmanifest" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style_hotels.css" />
+  </head>
+
+  <body>
+    <!-- hidden headers for google -->
+    <h1>HotelBook</h1>
+    <h2>Hotel, Travel, Booking</h2>
+
+    <!-- the frame of the page -->
+    <div id="frame-view">
+      <!-- header part -->
+      <header>
+        <section id="top">
+          <!-- logo area -->
+          <article id="top-logo">
+            <a href="index.htm"><img src="img/logo.jpg" alt="" title="" /></a>
+          </article>
+
+          <!-- search area -->
+          <article id="top-drop">
+            <p>Search</p>
+            <img src="svg/down-arrow.svg" alt="" title="" />
+            <div id="top-drop-search">
+              <section id="top-drop-search-container">
+                <form id="form-search">
+                  <fieldset class="form-search-set">
+                    <!-- search cities area -->
+                    <div class="form-search-set-group">
+                      <label for="cities">City</label>
+                      <input
+                        id="cities"
+                        type="text"
+                        list="cities-list"
+                        autocomplete="off"
+                        required
+                      />
+                      <datalist id="cities-list">
+                        <option data-value="London">London</option>
+                        <option data-value="Los Angeles">Los Angeles</option>
+                        <option data-value="New York">New York</option>
+                        <option data-value="Singapore">Singapore</option>
+                        <option data-value="Tokyo">Tokyo</option>
+                        <option data-value="Vancouver">Vancouver</option>
+                      </datalist>
+                    </div>
+                    <!-- search stations area -->
+                    <div class="form-search-set-group">
+                      <label for="stations">Station</label>
+                      <input
+                        id="stations"
+                        type="text"
+                        list="stations-list"
+                        autocomplete="off"
+                      />
+                      <datalist id="stations-list">
+                        <option data-value="Brentwood">Brentwood</option>
+                        <option data-value="Bridgeport">Bridgeport</option>
+                        <option data-value="Kingsway">Kingsway</option>
+                        <option data-value="Lansdowne">Lansdowne</option>
+                        <option data-value="Stadium">Stadium</option>
+                        <option data-value="Waterfront">Waterfront</option>
+                      </datalist>
+                    </div>
+                    <!-- search districts area -->
+                    <div class="form-search-set-group">
+                      <label for="districts">District</label>
+                      <input
+                        id="districts"
+                        type="text"
+                        list="districts-list"
+                        autocomplete="off"
+                      />
+                      <datalist id="districts-list">
+                        <option data-value="North Vancouver">
+                          North Vancouver
+                        </option>
+                        <option data-value="West Vancouver">
+                          West Vancouver
+                        </option>
+                        <option data-value="Surrey">Surrey</option>
+                        <option data-value="Burnaby">Burnaby</option>
+                        <option data-value="Maple Ridge">Maple Ridge</option>
+                        <option data-value="Richmond">Richmond</option>
+                      </datalist>
+                    </div>
+                  </fieldset>
+                  <!-- search check in date area -->
+                  <fieldset class="form-search-set">
+                    <div class="form-search-set-group">
+                      <label for="checkin">Check In</label>
+                      <input
+                        id="checkin"
+                        type="date"
+                        value="2021-01-24"
+                        required
+                      />
+                    </div>
+                    <!-- search check out date area -->
+                    <div class="form-search-set-group">
+                      <label for="checkout">Check Out</label>
+                      <input
+                        id="checkout"
+                        type="date"
+                        value="2021-01-25"
+                        required
+                      />
+                    </div>
+                    <!-- search date flexibility area -->
+                    <div class="form-search-set-group">
+                      <label for="flexibility">Date Flexibility</label>
+                      <select id="flexibility">
+                        <option value="">&#x00B1; 3 days</option>
+                        <option value="">&#x00B1; 7 days</option>
+                        <option value="">&#x00B1; 14 days</option>
+                        <option value="" selected>Exact Date</option>
+                      </select>
+                    </div>
+                  </fieldset>
+                  <!-- search facilities area -->
+                  <fieldset id="facilities-fieldset">
+                    <div id="facilities-container">
+                      <select id="facilities" multiple>
+                        <optgroup label="Room Facilities">
+                          <option value="">Balcony</option>
+                          <option value="">WiFi</option>
+                          <option value="">Washer/Dryer</option>
+                          <option value="">Microwave</option>
+                        </optgroup>
+                        <optgroup label="Hotel Facilities">
+                          <option value="">Laundry</option>
+                          <option value="">Gym</option>
+                          <option value="">Pool</option>
+                        </optgroup>
+                      </select>
+                    </div>
+                  </fieldset>
+                  <!-- search budget area -->
+                  <fieldset class="form-search-set">
+                    <div class="form-search-set-group">
+                      <label for="budget">Budget</label>
+                      <select id="budget">
+                        <option value="">$50 &#x00B1; $10</option>
+                        <option value="">$100 &#x00B1; $20</option>
+                        <option value="" selected>$250 &#x00B1; $50</option>
+                        <option value="">$500 &#x00B1; $100</option>
+                        <option value="">$1000 &#x00B1; $200</option>
+                        <option value="">$2000 &#x00B1; $400</option>
+                        <option value="">Any Price</option>
+                      </select>
+                    </div>
+                    <!-- search guests area -->
+                    <div class="form-search-set-group">
+                      <label for="guests">Guests</label>
+                      <select id="guests">
+                        <option value="" selected>1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                      </select>
+                    </div>
+                    <!-- search submit button area -->
+                    <div class="form-search-set-group">
+                      <div>
+                        <button type="submit">Search</button>
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>
+              </section>
+            </div>
+          </article>
+          <!-- profile area -->
+          <article id="top-profile">
+            <img src="svg/menu.svg" alt="" title="" /><img
+              src="svg/profile.svg"
+              alt=""
+              title=""
+            />
+            <div id="top-profile-select">
+              <div id="top-profile-select-container">
+                <a href="#"
+                  ><div class="top-profile-select-container-text">
+                    <p>Sign Up</p>
+                  </div></a
+                >
+                <a href="#"
+                  ><div class="top-profile-select-container-text">
+                    <p>Log In</p>
+                  </div></a
+                >
+                <div id="top-profile-select-container-line"><hr /></div>
+                <div class="top-profile-select-container-text"><p>Help</p></div>
+              </div>
+            </div>
+          </article>
+        </section>
+      </header>
+
+      <!-- main part -->
+      <main>
+        <section id="view">
+          <!-- map image -->
+          <figure>
+            <img
+              src="img/map.jpg"
+              alt="Map of target location showing available hotels."
+              title=""
+            />
+            <figcaption>
+              Map of target location showing available hotels.
+            </figcaption>
+          </figure>
+        </section>
+
+        <!-- START of one individual hotel - HOTEL1  -->
+        <!-- hotel icon in map area -->
+        <article class="view-icon1">
+          <div class="view-icon-container">
+            <div class="view-icon-item-px"><p>$259</p></div>
+            <div class="view-icon-item-star">
+              <img
+                src="svg/star-half.svg"
+                alt="Star icon fully colored."
+                title=""
+              />
+            </div>
+            <div class="view-icon-item-rating"><p>2.8</p></div>
+          </div>
+
+          <!-- hotel card area -->
+          <article class="view-card">
+            <div class="view-card-container">
+              <!-- hotel photos -->
+              <div class="view-card-item-photo">
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel1.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel2.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel3.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel4.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel5.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel6.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel7.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel8.jpg" alt="" title="" />
+                </div>
+                <!-- hotel info -->
+                <div class="view-card-item-photo-info">
+                  <p>i</p>
+                </div>
+                <div class="view-card-item-photo-info-active">
+                  <div class="info-active-container">
+                    <div class="info-active-title">
+                      <p class="info-active-title-text">About This Space</p>
+                      <hr class="info-active-line" />
+                    </div>
+                    <div class="info-active-left">
+                      <p class="info-active-text">
+                        Hideout Villa located nearby Hatonosu Valley which is
+                        the one of the best scenic spots in Okutama. Enjoy your
+                        tranquil moment surrounded by beauties of nature.
+                      </p>
+                      <p class="info-active-text">
+                        奥多摩有数の景勝地である鳩ノ巣渓谷のそばにある別荘をまるまる貸し切り。四季折々の自然が織りなす美しい景色に囲まれて、誰にも邪魔されない楽しい時間を過ごしてみませんか?
+                      </p>
+                    </div>
+                    <div class="info-active-right">
+                      <p class="info-active-title-sub">The Room</p>
+                      <p class="info-active-text">
+                        A living room where you can relax comfortably on the
+                        sofa. One bedroom is Japanese while the other is
+                        Western. In a large garden you can sit on the veranda
+                        and relax.
+                      </p>
+                      <p class="info-active-title-sub">Guest Access</p>
+                      <p class="info-active-text">
+                        Guests can use whole house.
+                      </p>
+                      <p class="info-active-title-sub">Licence Number</p>
+                      <p class="info-active-text">M130002484</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- hotel summary -->
+              <div class="view-card-item-head">
+                <p>
+                  An integrated resort that comprises three 55-storey towers of
+                  extravagant rooms and luxury suites with personal butler
+                  services.
+                </p>
+              </div>
+              <!-- hotel highlights -->
+              <div class="view-card-item-highlights">
+                <div><p>Highlights</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>Shopping mall and casino.</li>
+                    <li>Excellent view of skyline.</li>
+                    <li>Rooftop bar and dance club.</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- hotel facilities -->
+              <div class="view-card-item-facilities">
+                <div><p>Facilities</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>WiFi</li>
+                    <li>Balcony</li>
+                    <li>Gym</li>
+                    <li>Pool</li>
+                  </ul>
+                  <ul>
+                    <li>Laundry</li>
+                    <li>Microwave</li>
+                    <li>Bar</li>
+                    <li>Refrigerator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="view-card-item-empty"></div>
+              <!-- hotel name and room -->
+              <div class="view-card-item-name">
+                <p>Marina Bay Sands Singapore - Standard Twin Room</p>
+              </div>
+              <!-- hotel book button -->
+              <a class="view-card-item-book" href="#">
+                <p>BOOK</p>
+              </a>
+            </div>
+          </article>
+        </article>
+        <!-- END of one individual hotel -->
+
+        <!-- START of one individual hotel - HOTEL2 -->
+        <!-- hotel icon in map area -->
+        <article class="view-icon2">
+          <div class="view-icon-container">
+            <div class="view-icon-item-px"><p>$288</p></div>
+            <div class="view-icon-item-star">
+              <img
+                src="svg/star-half.svg"
+                alt="Star icon fully colored."
+                title=""
+              />
+            </div>
+            <div class="view-icon-item-rating"><p>2.5</p></div>
+          </div>
+
+          <!-- hotel card area -->
+          <article class="view-card">
+            <div class="view-card-container">
+              <!-- hotel photos -->
+              <div class="view-card-item-photo">
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel1.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel2.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel3.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel4.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel5.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel6.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel7.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel8.jpg" alt="" title="" />
+                </div>
+                <!-- hotel info -->
+                <div class="view-card-item-photo-info">
+                  <p>i</p>
+                </div>
+                <div class="view-card-item-photo-info-active">
+                  <div class="info-active-container">
+                    <div class="info-active-title">
+                      <p class="info-active-title-text">About This Space</p>
+                      <hr class="info-active-line" />
+                    </div>
+                    <div class="info-active-left">
+                      <p class="info-active-text">
+                        Hideout Villa located nearby Hatonosu Valley which is
+                        the one of the best scenic spots in Okutama. Enjoy your
+                        tranquil moment surrounded by beauties of nature.
+                      </p>
+                      <p class="info-active-text">
+                        奥多摩有数の景勝地である鳩ノ巣渓谷のそばにある別荘をまるまる貸し切り。四季折々の自然が織りなす美しい景色に囲まれて、誰にも邪魔されない楽しい時間を過ごしてみませんか?
+                      </p>
+                    </div>
+                    <div class="info-active-right">
+                      <p class="info-active-title-sub">The Room</p>
+                      <p class="info-active-text">
+                        A living room where you can relax comfortably on the
+                        sofa. One bedroom is Japanese while the other is
+                        Western. In a large garden you can sit on the veranda
+                        and relax.
+                      </p>
+                      <p class="info-active-title-sub">Guest Access</p>
+                      <p class="info-active-text">
+                        Guests can use whole house.
+                      </p>
+                      <p class="info-active-title-sub">Licence Number</p>
+                      <p class="info-active-text">M130002484</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- hotel summary -->
+              <div class="view-card-item-head">
+                <p>
+                  An integrated resort that comprises three 55-storey towers of
+                  extravagant rooms and luxury suites with personal butler
+                  services.
+                </p>
+              </div>
+              <!-- hotel highlights -->
+              <div class="view-card-item-highlights">
+                <div><p>Highlights</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>Shopping mall and casino.</li>
+                    <li>Excellent view of skyline.</li>
+                    <li>Rooftop bar and dance club.</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- hotel facilities -->
+              <div class="view-card-item-facilities">
+                <div><p>Facilities</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>WiFi</li>
+                    <li>Balcony</li>
+                    <li>Gym</li>
+                    <li>Pool</li>
+                  </ul>
+                  <ul>
+                    <li>Laundry</li>
+                    <li>Microwave</li>
+                    <li>Bar</li>
+                    <li>Refrigerator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="view-card-item-empty"></div>
+              <!-- hotel name and room -->
+              <div class="view-card-item-name">
+                <p>Marina Bay Sands Singapore - Standard Twin Room</p>
+              </div>
+              <!-- hotel book button -->
+              <a class="view-card-item-book" href="#">
+                <p>BOOK</p>
+              </a>
+            </div>
+          </article>
+        </article>
+        <!-- END of one individual hotel -->
+
+        <!-- START of one individual hotel - HOTEL3 -->
+        <!-- hotel icon in map area -->
+        <article class="view-icon3">
+          <div class="view-icon-container">
+            <div class="view-icon-item-px"><p>$520</p></div>
+            <div class="view-icon-item-star">
+              <img
+                src="svg/star-full.svg"
+                alt="Star icon fully colored."
+                title=""
+              />
+            </div>
+            <div class="view-icon-item-rating"><p>4.9</p></div>
+          </div>
+
+          <!-- hotel card area -->
+          <article class="view-card">
+            <div class="view-card-container">
+              <!-- hotel photos -->
+              <div class="view-card-item-photo">
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel1.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel2.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel3.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel4.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel5.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel6.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel7.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel8.jpg" alt="" title="" />
+                </div>
+                <!-- hotel info -->
+                <div class="view-card-item-photo-info">
+                  <p>i</p>
+                </div>
+                <div class="view-card-item-photo-info-active">
+                  <div class="info-active-container">
+                    <div class="info-active-title">
+                      <p class="info-active-title-text">About This Space</p>
+                      <hr class="info-active-line" />
+                    </div>
+                    <div class="info-active-left">
+                      <p class="info-active-text">
+                        Hideout Villa located nearby Hatonosu Valley which is
+                        the one of the best scenic spots in Okutama. Enjoy your
+                        tranquil moment surrounded by beauties of nature.
+                      </p>
+                      <p class="info-active-text">
+                        奥多摩有数の景勝地である鳩ノ巣渓谷のそばにある別荘をまるまる貸し切り。四季折々の自然が織りなす美しい景色に囲まれて、誰にも邪魔されない楽しい時間を過ごしてみませんか?
+                      </p>
+                    </div>
+                    <div class="info-active-right">
+                      <p class="info-active-title-sub">The Room</p>
+                      <p class="info-active-text">
+                        A living room where you can relax comfortably on the
+                        sofa. One bedroom is Japanese while the other is
+                        Western. In a large garden you can sit on the veranda
+                        and relax.
+                      </p>
+                      <p class="info-active-title-sub">Guest Access</p>
+                      <p class="info-active-text">
+                        Guests can use whole house.
+                      </p>
+                      <p class="info-active-title-sub">Licence Number</p>
+                      <p class="info-active-text">M130002484</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- hotel summary -->
+              <div class="view-card-item-head">
+                <p>
+                  An integrated resort that comprises three 55-storey towers of
+                  extravagant rooms and luxury suites with personal butler
+                  services.
+                </p>
+              </div>
+              <!-- hotel highlights -->
+              <div class="view-card-item-highlights">
+                <div><p>Highlights</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>Shopping mall and casino.</li>
+                    <li>Excellent view of skyline.</li>
+                    <li>Rooftop bar and dance club.</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- hotel facilities -->
+              <div class="view-card-item-facilities">
+                <div><p>Facilities</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>WiFi</li>
+                    <li>Balcony</li>
+                    <li>Gym</li>
+                    <li>Pool</li>
+                  </ul>
+                  <ul>
+                    <li>Laundry</li>
+                    <li>Microwave</li>
+                    <li>Bar</li>
+                    <li>Refrigerator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="view-card-item-empty"></div>
+              <!-- hotel name and room -->
+              <div class="view-card-item-name">
+                <p>Marina Bay Sands Singapore - Standard Twin Room</p>
+              </div>
+              <!-- hotel book button -->
+              <a class="view-card-item-book" href="#">
+                <p>BOOK</p>
+              </a>
+            </div>
+          </article>
+        </article>
+        <!-- END of one individual hotel -->
+
+        <!-- START of one individual hotel - HOTEL4 -->
+        <!-- hotel icon in map area -->
+        <article class="view-icon4">
+          <div class="view-icon-container">
+            <div class="view-icon-item-px"><p>$740</p></div>
+            <div class="view-icon-item-star">
+              <img
+                src="svg/star-full.svg"
+                alt="Star icon fully colored."
+                title=""
+              />
+            </div>
+            <div class="view-icon-item-rating"><p>4.3</p></div>
+          </div>
+
+          <!-- hotel card area -->
+          <article class="view-card">
+            <div class="view-card-container">
+              <!-- hotel photos -->
+              <div class="view-card-item-photo">
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel1.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel2.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel3.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel4.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel5.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel6.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel7.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel8.jpg" alt="" title="" />
+                </div>
+                <!-- hotel info -->
+                <div class="view-card-item-photo-info">
+                  <p>i</p>
+                </div>
+                <div class="view-card-item-photo-info-active">
+                  <div class="info-active-container">
+                    <div class="info-active-title">
+                      <p class="info-active-title-text">About This Space</p>
+                      <hr class="info-active-line" />
+                    </div>
+                    <div class="info-active-left">
+                      <p class="info-active-text">
+                        Hideout Villa located nearby Hatonosu Valley which is
+                        the one of the best scenic spots in Okutama. Enjoy your
+                        tranquil moment surrounded by beauties of nature.
+                      </p>
+                      <p class="info-active-text">
+                        奥多摩有数の景勝地である鳩ノ巣渓谷のそばにある別荘をまるまる貸し切り。四季折々の自然が織りなす美しい景色に囲まれて、誰にも邪魔されない楽しい時間を過ごしてみませんか?
+                      </p>
+                    </div>
+                    <div class="info-active-right">
+                      <p class="info-active-title-sub">The Room</p>
+                      <p class="info-active-text">
+                        A living room where you can relax comfortably on the
+                        sofa. One bedroom is Japanese while the other is
+                        Western. In a large garden you can sit on the veranda
+                        and relax.
+                      </p>
+                      <p class="info-active-title-sub">Guest Access</p>
+                      <p class="info-active-text">
+                        Guests can use whole house.
+                      </p>
+                      <p class="info-active-title-sub">Licence Number</p>
+                      <p class="info-active-text">M130002484</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- hotel summary -->
+              <div class="view-card-item-head">
+                <p>
+                  An integrated resort that comprises three 55-storey towers of
+                  extravagant rooms and luxury suites with personal butler
+                  services.
+                </p>
+              </div>
+              <!-- hotel highlights -->
+              <div class="view-card-item-highlights">
+                <div><p>Highlights</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>Shopping mall and casino.</li>
+                    <li>Excellent view of skyline.</li>
+                    <li>Rooftop bar and dance club.</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- hotel facilities -->
+              <div class="view-card-item-facilities">
+                <div><p>Facilities</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>WiFi</li>
+                    <li>Balcony</li>
+                    <li>Gym</li>
+                    <li>Pool</li>
+                  </ul>
+                  <ul>
+                    <li>Laundry</li>
+                    <li>Microwave</li>
+                    <li>Bar</li>
+                    <li>Refrigerator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="view-card-item-empty"></div>
+              <!-- hotel name and room -->
+              <div class="view-card-item-name">
+                <p>Marina Bay Sands Singapore - Standard Twin Room</p>
+              </div>
+              <!-- hotel book button -->
+              <a class="view-card-item-book" href="#">
+                <p>BOOK</p>
+              </a>
+            </div>
+          </article>
+        </article>
+        <!-- END of one individual hotel -->
+
+        <!-- START of one individual hotel - HOTEL5 -->
+        <!-- hotel icon in map area -->
+        <article class="view-icon5">
+          <div class="view-icon-container">
+            <div class="view-icon-item-px"><p>$379</p></div>
+            <div class="view-icon-item-star">
+              <img
+                src="svg/star-full.svg"
+                alt="Star icon fully colored."
+                title=""
+              />
+            </div>
+            <div class="view-icon-item-rating"><p>4.1</p></div>
+          </div>
+
+          <!-- hotel card area -->
+          <article class="view-card">
+            <div class="view-card-container">
+              <!-- hotel photos -->
+              <div class="view-card-item-photo">
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel1.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel2.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel3.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel4.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel5.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel6.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel7.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel8.jpg" alt="" title="" />
+                </div>
+                <!-- hotel info -->
+                <div class="view-card-item-photo-info">
+                  <p>i</p>
+                </div>
+                <div class="view-card-item-photo-info-active">
+                  <div class="info-active-container">
+                    <div class="info-active-title">
+                      <p class="info-active-title-text">About This Space</p>
+                      <hr class="info-active-line" />
+                    </div>
+                    <div class="info-active-left">
+                      <p class="info-active-text">
+                        Hideout Villa located nearby Hatonosu Valley which is
+                        the one of the best scenic spots in Okutama. Enjoy your
+                        tranquil moment surrounded by beauties of nature.
+                      </p>
+                      <p class="info-active-text">
+                        奥多摩有数の景勝地である鳩ノ巣渓谷のそばにある別荘をまるまる貸し切り。四季折々の自然が織りなす美しい景色に囲まれて、誰にも邪魔されない楽しい時間を過ごしてみませんか?
+                      </p>
+                    </div>
+                    <div class="info-active-right">
+                      <p class="info-active-title-sub">The Room</p>
+                      <p class="info-active-text">
+                        A living room where you can relax comfortably on the
+                        sofa. One bedroom is Japanese while the other is
+                        Western. In a large garden you can sit on the veranda
+                        and relax.
+                      </p>
+                      <p class="info-active-title-sub">Guest Access</p>
+                      <p class="info-active-text">
+                        Guests can use whole house.
+                      </p>
+                      <p class="info-active-title-sub">Licence Number</p>
+                      <p class="info-active-text">M130002484</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- hotel summary -->
+              <div class="view-card-item-head">
+                <p>
+                  An integrated resort that comprises three 55-storey towers of
+                  extravagant rooms and luxury suites with personal butler
+                  services.
+                </p>
+              </div>
+              <!-- hotel highlights -->
+              <div class="view-card-item-highlights">
+                <div><p>Highlights</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>Shopping mall and casino.</li>
+                    <li>Excellent view of skyline.</li>
+                    <li>Rooftop bar and dance club.</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- hotel facilities -->
+              <div class="view-card-item-facilities">
+                <div><p>Facilities</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>WiFi</li>
+                    <li>Balcony</li>
+                    <li>Gym</li>
+                    <li>Pool</li>
+                  </ul>
+                  <ul>
+                    <li>Laundry</li>
+                    <li>Microwave</li>
+                    <li>Bar</li>
+                    <li>Refrigerator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="view-card-item-empty"></div>
+              <!-- hotel name and room -->
+              <div class="view-card-item-name">
+                <p>Marina Bay Sands Singapore - Standard Twin Room</p>
+              </div>
+              <!-- hotel book button -->
+              <a class="view-card-item-book" href="#">
+                <p>BOOK</p>
+              </a>
+            </div>
+          </article>
+        </article>
+        <!-- END of one individual hotel -->
+
+        <!-- START of one individual hotel - HOTEL6 -->
+        <!-- hotel icon in map area -->
+        <article class="view-icon6">
+          <div class="view-icon-container">
+            <div class="view-icon-item-px"><p>$535</p></div>
+            <div class="view-icon-item-star">
+              <img
+                src="svg/star-half.svg"
+                alt="Star icon fully colored."
+                title=""
+              />
+            </div>
+            <div class="view-icon-item-rating"><p>2.9</p></div>
+          </div>
+
+          <!-- hotel card area -->
+          <article class="view-card">
+            <div class="view-card-container">
+              <!-- hotel photos -->
+              <div class="view-card-item-photo">
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel1.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel2.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel3.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel4.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel5.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel6.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel7.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel8.jpg" alt="" title="" />
+                </div>
+                <!-- hotel info -->
+                <div class="view-card-item-photo-info">
+                  <p>i</p>
+                </div>
+                <div class="view-card-item-photo-info-active">
+                  <div class="info-active-container">
+                    <div class="info-active-title">
+                      <p class="info-active-title-text">About This Space</p>
+                      <hr class="info-active-line" />
+                    </div>
+                    <div class="info-active-left">
+                      <p class="info-active-text">
+                        Hideout Villa located nearby Hatonosu Valley which is
+                        the one of the best scenic spots in Okutama. Enjoy your
+                        tranquil moment surrounded by beauties of nature.
+                      </p>
+                      <p class="info-active-text">
+                        奥多摩有数の景勝地である鳩ノ巣渓谷のそばにある別荘をまるまる貸し切り。四季折々の自然が織りなす美しい景色に囲まれて、誰にも邪魔されない楽しい時間を過ごしてみませんか?
+                      </p>
+                    </div>
+                    <div class="info-active-right">
+                      <p class="info-active-title-sub">The Room</p>
+                      <p class="info-active-text">
+                        A living room where you can relax comfortably on the
+                        sofa. One bedroom is Japanese while the other is
+                        Western. In a large garden you can sit on the veranda
+                        and relax.
+                      </p>
+                      <p class="info-active-title-sub">Guest Access</p>
+                      <p class="info-active-text">
+                        Guests can use whole house.
+                      </p>
+                      <p class="info-active-title-sub">Licence Number</p>
+                      <p class="info-active-text">M130002484</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- hotel summary -->
+              <div class="view-card-item-head">
+                <p>
+                  An integrated resort that comprises three 55-storey towers of
+                  extravagant rooms and luxury suites with personal butler
+                  services.
+                </p>
+              </div>
+              <!-- hotel highlights -->
+              <div class="view-card-item-highlights">
+                <div><p>Highlights</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>Shopping mall and casino.</li>
+                    <li>Excellent view of skyline.</li>
+                    <li>Rooftop bar and dance club.</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- hotel facilities -->
+              <div class="view-card-item-facilities">
+                <div><p>Facilities</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>WiFi</li>
+                    <li>Balcony</li>
+                    <li>Gym</li>
+                    <li>Pool</li>
+                  </ul>
+                  <ul>
+                    <li>Laundry</li>
+                    <li>Microwave</li>
+                    <li>Bar</li>
+                    <li>Refrigerator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="view-card-item-empty"></div>
+              <!-- hotel name and room -->
+              <div class="view-card-item-name">
+                <p>Marina Bay Sands Singapore - Standard Twin Room</p>
+              </div>
+              <!-- hotel book button -->
+              <a class="view-card-item-book" href="#">
+                <p>BOOK</p>
+              </a>
+            </div>
+          </article>
+        </article>
+        <!-- END of one individual hotel -->
+
+        <!-- START of one individual hotel - HOTEL7 -->
+        <!-- hotel icon in map area -->
+        <article class="view-icon7">
+          <div class="view-icon-container">
+            <div class="view-icon-item-px"><p>$155</p></div>
+            <div class="view-icon-item-star">
+              <img
+                src="svg/star-half.svg"
+                alt="Star icon fully colored."
+                title=""
+              />
+            </div>
+            <div class="view-icon-item-rating"><p>2.2</p></div>
+          </div>
+
+          <!-- hotel card area -->
+          <article class="view-card">
+            <div class="view-card-container">
+              <!-- hotel photos -->
+              <div class="view-card-item-photo">
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel1.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel2.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel3.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel4.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel5.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel6.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel7.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel8.jpg" alt="" title="" />
+                </div>
+                <!-- hotel info -->
+                <div class="view-card-item-photo-info">
+                  <p>i</p>
+                </div>
+                <div class="view-card-item-photo-info-active">
+                  <div class="info-active-container">
+                    <div class="info-active-title">
+                      <p class="info-active-title-text">About This Space</p>
+                      <hr class="info-active-line" />
+                    </div>
+                    <div class="info-active-left">
+                      <p class="info-active-text">
+                        Hideout Villa located nearby Hatonosu Valley which is
+                        the one of the best scenic spots in Okutama. Enjoy your
+                        tranquil moment surrounded by beauties of nature.
+                      </p>
+                      <p class="info-active-text">
+                        奥多摩有数の景勝地である鳩ノ巣渓谷のそばにある別荘をまるまる貸し切り。四季折々の自然が織りなす美しい景色に囲まれて、誰にも邪魔されない楽しい時間を過ごしてみませんか?
+                      </p>
+                    </div>
+                    <div class="info-active-right">
+                      <p class="info-active-title-sub">The Room</p>
+                      <p class="info-active-text">
+                        A living room where you can relax comfortably on the
+                        sofa. One bedroom is Japanese while the other is
+                        Western. In a large garden you can sit on the veranda
+                        and relax.
+                      </p>
+                      <p class="info-active-title-sub">Guest Access</p>
+                      <p class="info-active-text">
+                        Guests can use whole house.
+                      </p>
+                      <p class="info-active-title-sub">Licence Number</p>
+                      <p class="info-active-text">M130002484</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- hotel summary -->
+              <div class="view-card-item-head">
+                <p>
+                  An integrated resort that comprises three 55-storey towers of
+                  extravagant rooms and luxury suites with personal butler
+                  services.
+                </p>
+              </div>
+              <!-- hotel highlights -->
+              <div class="view-card-item-highlights">
+                <div><p>Highlights</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>Shopping mall and casino.</li>
+                    <li>Excellent view of skyline.</li>
+                    <li>Rooftop bar and dance club.</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- hotel facilities -->
+              <div class="view-card-item-facilities">
+                <div><p>Facilities</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>WiFi</li>
+                    <li>Balcony</li>
+                    <li>Gym</li>
+                    <li>Pool</li>
+                  </ul>
+                  <ul>
+                    <li>Laundry</li>
+                    <li>Microwave</li>
+                    <li>Bar</li>
+                    <li>Refrigerator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="view-card-item-empty"></div>
+              <!-- hotel name and room -->
+              <div class="view-card-item-name">
+                <p>Marina Bay Sands Singapore - Standard Twin Room</p>
+              </div>
+              <!-- hotel book button -->
+              <a class="view-card-item-book" href="#">
+                <p>BOOK</p>
+              </a>
+            </div>
+          </article>
+        </article>
+        <!-- END of one individual hotel -->
+
+        <!-- START of one individual hotel - HOTEL8 -->
+        <!-- hotel icon in map area -->
+        <article class="view-icon8">
+          <div class="view-icon-container">
+            <div class="view-icon-item-px"><p>$190</p></div>
+            <div class="view-icon-item-star">
+              <img
+                src="svg/star-full.svg"
+                alt="Star icon fully colored."
+                title=""
+              />
+            </div>
+            <div class="view-icon-item-rating"><p>3.8</p></div>
+          </div>
+
+          <!-- hotel card area -->
+          <article class="view-card">
+            <div class="view-card-container">
+              <!-- hotel photos -->
+              <div class="view-card-item-photo">
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel1.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel2.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel3.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel4.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel5.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel6.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel7.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel8.jpg" alt="" title="" />
+                </div>
+                <!-- hotel info -->
+                <div class="view-card-item-photo-info">
+                  <p>i</p>
+                </div>
+                <div class="view-card-item-photo-info-active">
+                  <div class="info-active-container">
+                    <div class="info-active-title">
+                      <p class="info-active-title-text">About This Space</p>
+                      <hr class="info-active-line" />
+                    </div>
+                    <div class="info-active-left">
+                      <p class="info-active-text">
+                        Hideout Villa located nearby Hatonosu Valley which is
+                        the one of the best scenic spots in Okutama. Enjoy your
+                        tranquil moment surrounded by beauties of nature.
+                      </p>
+                      <p class="info-active-text">
+                        奥多摩有数の景勝地である鳩ノ巣渓谷のそばにある別荘をまるまる貸し切り。四季折々の自然が織りなす美しい景色に囲まれて、誰にも邪魔されない楽しい時間を過ごしてみませんか?
+                      </p>
+                    </div>
+                    <div class="info-active-right">
+                      <p class="info-active-title-sub">The Room</p>
+                      <p class="info-active-text">
+                        A living room where you can relax comfortably on the
+                        sofa. One bedroom is Japanese while the other is
+                        Western. In a large garden you can sit on the veranda
+                        and relax.
+                      </p>
+                      <p class="info-active-title-sub">Guest Access</p>
+                      <p class="info-active-text">
+                        Guests can use whole house.
+                      </p>
+                      <p class="info-active-title-sub">Licence Number</p>
+                      <p class="info-active-text">M130002484</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- hotel summary -->
+              <div class="view-card-item-head">
+                <p>
+                  An integrated resort that comprises three 55-storey towers of
+                  extravagant rooms and luxury suites with personal butler
+                  services.
+                </p>
+              </div>
+              <!-- hotel highlights -->
+              <div class="view-card-item-highlights">
+                <div><p>Highlights</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>Shopping mall and casino.</li>
+                    <li>Excellent view of skyline.</li>
+                    <li>Rooftop bar and dance club.</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- hotel facilities -->
+              <div class="view-card-item-facilities">
+                <div><p>Facilities</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>WiFi</li>
+                    <li>Balcony</li>
+                    <li>Gym</li>
+                    <li>Pool</li>
+                  </ul>
+                  <ul>
+                    <li>Laundry</li>
+                    <li>Microwave</li>
+                    <li>Bar</li>
+                    <li>Refrigerator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="view-card-item-empty"></div>
+              <!-- hotel name and room -->
+              <div class="view-card-item-name">
+                <p>Marina Bay Sands Singapore - Standard Twin Room</p>
+              </div>
+              <!-- hotel book button -->
+              <a class="view-card-item-book" href="#">
+                <p>BOOK</p>
+              </a>
+            </div>
+          </article>
+        </article>
+        <!-- END of one individual hotel -->
+
+        <!-- START of one individual hotel - HOTEL9 -->
+        <!-- hotel icon in map area -->
+        <article class="view-icon9">
+          <div class="view-icon-container">
+            <div class="view-icon-item-px"><p>$615</p></div>
+            <div class="view-icon-item-star">
+              <img
+                src="svg/star-full.svg"
+                alt="Star icon fully colored."
+                title=""
+              />
+            </div>
+            <div class="view-icon-item-rating"><p>4.4</p></div>
+          </div>
+
+          <!-- hotel card area -->
+          <article class="view-card">
+            <div class="view-card-container">
+              <!-- hotel photos -->
+              <div class="view-card-item-photo">
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel1.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel2.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel3.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel4.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel5.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel6.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel7.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel8.jpg" alt="" title="" />
+                </div>
+                <!-- hotel info -->
+                <div class="view-card-item-photo-info">
+                  <p>i</p>
+                </div>
+                <div class="view-card-item-photo-info-active">
+                  <div class="info-active-container">
+                    <div class="info-active-title">
+                      <p class="info-active-title-text">About This Space</p>
+                      <hr class="info-active-line" />
+                    </div>
+                    <div class="info-active-left">
+                      <p class="info-active-text">
+                        Hideout Villa located nearby Hatonosu Valley which is
+                        the one of the best scenic spots in Okutama. Enjoy your
+                        tranquil moment surrounded by beauties of nature.
+                      </p>
+                      <p class="info-active-text">
+                        奥多摩有数の景勝地である鳩ノ巣渓谷のそばにある別荘をまるまる貸し切り。四季折々の自然が織りなす美しい景色に囲まれて、誰にも邪魔されない楽しい時間を過ごしてみませんか?
+                      </p>
+                    </div>
+                    <div class="info-active-right">
+                      <p class="info-active-title-sub">The Room</p>
+                      <p class="info-active-text">
+                        A living room where you can relax comfortably on the
+                        sofa. One bedroom is Japanese while the other is
+                        Western. In a large garden you can sit on the veranda
+                        and relax.
+                      </p>
+                      <p class="info-active-title-sub">Guest Access</p>
+                      <p class="info-active-text">
+                        Guests can use whole house.
+                      </p>
+                      <p class="info-active-title-sub">Licence Number</p>
+                      <p class="info-active-text">M130002484</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- hotel summary -->
+              <div class="view-card-item-head">
+                <p>
+                  An integrated resort that comprises three 55-storey towers of
+                  extravagant rooms and luxury suites with personal butler
+                  services.
+                </p>
+              </div>
+              <!-- hotel highlights -->
+              <div class="view-card-item-highlights">
+                <div><p>Highlights</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>Shopping mall and casino.</li>
+                    <li>Excellent view of skyline.</li>
+                    <li>Rooftop bar and dance club.</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- hotel facilities -->
+              <div class="view-card-item-facilities">
+                <div><p>Facilities</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>WiFi</li>
+                    <li>Balcony</li>
+                    <li>Gym</li>
+                    <li>Pool</li>
+                  </ul>
+                  <ul>
+                    <li>Laundry</li>
+                    <li>Microwave</li>
+                    <li>Bar</li>
+                    <li>Refrigerator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="view-card-item-empty"></div>
+              <!-- hotel name and room -->
+              <div class="view-card-item-name">
+                <p>Marina Bay Sands Singapore - Standard Twin Room</p>
+              </div>
+              <!-- hotel book button -->
+              <a class="view-card-item-book" href="#">
+                <p>BOOK</p>
+              </a>
+            </div>
+          </article>
+        </article>
+        <!-- END of one individual hotel -->
+
+        <!-- START of one individual hotel - HOTEL10 -->
+        <!-- hotel icon in map area -->
+        <article class="view-icon10">
+          <div class="view-icon-container">
+            <div class="view-icon-item-px"><p>$780</p></div>
+            <div class="view-icon-item-star">
+              <img
+                src="svg/star-full.svg"
+                alt="Star icon fully colored."
+                title=""
+              />
+            </div>
+            <div class="view-icon-item-rating"><p>4.7</p></div>
+          </div>
+
+          <!-- hotel card area -->
+          <article class="view-card">
+            <div class="view-card-container">
+              <!-- hotel photos -->
+              <div class="view-card-item-photo">
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel1.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel2.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel3.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel4.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel5.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel6.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel7.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel8.jpg" alt="" title="" />
+                </div>
+                <!-- hotel info -->
+                <div class="view-card-item-photo-info">
+                  <p>i</p>
+                </div>
+                <div class="view-card-item-photo-info-active">
+                  <div class="info-active-container">
+                    <div class="info-active-title">
+                      <p class="info-active-title-text">About This Space</p>
+                      <hr class="info-active-line" />
+                    </div>
+                    <div class="info-active-left">
+                      <p class="info-active-text">
+                        Hideout Villa located nearby Hatonosu Valley which is
+                        the one of the best scenic spots in Okutama. Enjoy your
+                        tranquil moment surrounded by beauties of nature.
+                      </p>
+                      <p class="info-active-text">
+                        奥多摩有数の景勝地である鳩ノ巣渓谷のそばにある別荘をまるまる貸し切り。四季折々の自然が織りなす美しい景色に囲まれて、誰にも邪魔されない楽しい時間を過ごしてみませんか?
+                      </p>
+                    </div>
+                    <div class="info-active-right">
+                      <p class="info-active-title-sub">The Room</p>
+                      <p class="info-active-text">
+                        A living room where you can relax comfortably on the
+                        sofa. One bedroom is Japanese while the other is
+                        Western. In a large garden you can sit on the veranda
+                        and relax.
+                      </p>
+                      <p class="info-active-title-sub">Guest Access</p>
+                      <p class="info-active-text">
+                        Guests can use whole house.
+                      </p>
+                      <p class="info-active-title-sub">Licence Number</p>
+                      <p class="info-active-text">M130002484</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- hotel summary -->
+              <div class="view-card-item-head">
+                <p>
+                  An integrated resort that comprises three 55-storey towers of
+                  extravagant rooms and luxury suites with personal butler
+                  services.
+                </p>
+              </div>
+              <!-- hotel highlights -->
+              <div class="view-card-item-highlights">
+                <div><p>Highlights</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>Shopping mall and casino.</li>
+                    <li>Excellent view of skyline.</li>
+                    <li>Rooftop bar and dance club.</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- hotel facilities -->
+              <div class="view-card-item-facilities">
+                <div><p>Facilities</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>WiFi</li>
+                    <li>Balcony</li>
+                    <li>Gym</li>
+                    <li>Pool</li>
+                  </ul>
+                  <ul>
+                    <li>Laundry</li>
+                    <li>Microwave</li>
+                    <li>Bar</li>
+                    <li>Refrigerator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="view-card-item-empty"></div>
+              <!-- hotel name and room -->
+              <div class="view-card-item-name">
+                <p>Marina Bay Sands Singapore - Standard Twin Room</p>
+              </div>
+              <!-- hotel book button -->
+              <a class="view-card-item-book" href="#">
+                <p>BOOK</p>
+              </a>
+            </div>
+          </article>
+        </article>
+        <!-- END of one individual hotel -->
+
+        <!-- START of one individual hotel - HOTEL11 -->
+        <!-- hotel icon in map area -->
+        <article class="view-icon11">
+          <div class="view-icon-container">
+            <div class="view-icon-item-px"><p>$436</p></div>
+            <div class="view-icon-item-star">
+              <img
+                src="svg/star-full.svg"
+                alt="Star icon fully colored."
+                title=""
+              />
+            </div>
+            <div class="view-icon-item-rating"><p>4.5</p></div>
+          </div>
+
+          <!-- hotel card area -->
+          <article class="view-card">
+            <div class="view-card-container">
+              <!-- hotel photos -->
+              <div class="view-card-item-photo">
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel1.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel2.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel3.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel4.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel5.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel6.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel7.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel8.jpg" alt="" title="" />
+                </div>
+                <!-- hotel info -->
+                <div class="view-card-item-photo-info">
+                  <p>i</p>
+                </div>
+                <div class="view-card-item-photo-info-active">
+                  <div class="info-active-container">
+                    <div class="info-active-title">
+                      <p class="info-active-title-text">About This Space</p>
+                      <hr class="info-active-line" />
+                    </div>
+                    <div class="info-active-left">
+                      <p class="info-active-text">
+                        Hideout Villa located nearby Hatonosu Valley which is
+                        the one of the best scenic spots in Okutama. Enjoy your
+                        tranquil moment surrounded by beauties of nature.
+                      </p>
+                      <p class="info-active-text">
+                        奥多摩有数の景勝地である鳩ノ巣渓谷のそばにある別荘をまるまる貸し切り。四季折々の自然が織りなす美しい景色に囲まれて、誰にも邪魔されない楽しい時間を過ごしてみませんか?
+                      </p>
+                    </div>
+                    <div class="info-active-right">
+                      <p class="info-active-title-sub">The Room</p>
+                      <p class="info-active-text">
+                        A living room where you can relax comfortably on the
+                        sofa. One bedroom is Japanese while the other is
+                        Western. In a large garden you can sit on the veranda
+                        and relax.
+                      </p>
+                      <p class="info-active-title-sub">Guest Access</p>
+                      <p class="info-active-text">
+                        Guests can use whole house.
+                      </p>
+                      <p class="info-active-title-sub">Licence Number</p>
+                      <p class="info-active-text">M130002484</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- hotel summary -->
+              <div class="view-card-item-head">
+                <p>
+                  An integrated resort that comprises three 55-storey towers of
+                  extravagant rooms and luxury suites with personal butler
+                  services.
+                </p>
+              </div>
+              <!-- hotel highlights -->
+              <div class="view-card-item-highlights">
+                <div><p>Highlights</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>Shopping mall and casino.</li>
+                    <li>Excellent view of skyline.</li>
+                    <li>Rooftop bar and dance club.</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- hotel facilities -->
+              <div class="view-card-item-facilities">
+                <div><p>Facilities</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>WiFi</li>
+                    <li>Balcony</li>
+                    <li>Gym</li>
+                    <li>Pool</li>
+                  </ul>
+                  <ul>
+                    <li>Laundry</li>
+                    <li>Microwave</li>
+                    <li>Bar</li>
+                    <li>Refrigerator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="view-card-item-empty"></div>
+              <!-- hotel name and room -->
+              <div class="view-card-item-name">
+                <p>Marina Bay Sands Singapore - Standard Twin Room</p>
+              </div>
+              <!-- hotel book button -->
+              <a class="view-card-item-book" href="#">
+                <p>BOOK</p>
+              </a>
+            </div>
+          </article>
+        </article>
+        <!-- END of one individual hotel -->
+
+        <!-- START of one individual hotel - HOTEL12 -->
+        <!-- hotel icon in map area -->
+        <article class="view-icon12">
+          <div class="view-icon-container">
+            <div class="view-icon-item-px"><p>$272</p></div>
+            <div class="view-icon-item-star">
+              <img
+                src="svg/star-half.svg"
+                alt="Star icon fully colored."
+                title=""
+              />
+            </div>
+            <div class="view-icon-item-rating"><p>2.6</p></div>
+          </div>
+
+          <!-- hotel card area -->
+          <article class="view-card">
+            <div class="view-card-container">
+              <!-- hotel photos -->
+              <div class="view-card-item-photo">
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel1.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel2.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel3.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel4.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel5.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel6.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel7.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel8.jpg" alt="" title="" />
+                </div>
+                <!-- hotel info -->
+                <div class="view-card-item-photo-info">
+                  <p>i</p>
+                </div>
+                <div class="view-card-item-photo-info-active">
+                  <div class="info-active-container">
+                    <div class="info-active-title">
+                      <p class="info-active-title-text">About This Space</p>
+                      <hr class="info-active-line" />
+                    </div>
+                    <div class="info-active-left">
+                      <p class="info-active-text">
+                        Hideout Villa located nearby Hatonosu Valley which is
+                        the one of the best scenic spots in Okutama. Enjoy your
+                        tranquil moment surrounded by beauties of nature.
+                      </p>
+                      <p class="info-active-text">
+                        奥多摩有数の景勝地である鳩ノ巣渓谷のそばにある別荘をまるまる貸し切り。四季折々の自然が織りなす美しい景色に囲まれて、誰にも邪魔されない楽しい時間を過ごしてみませんか?
+                      </p>
+                    </div>
+                    <div class="info-active-right">
+                      <p class="info-active-title-sub">The Room</p>
+                      <p class="info-active-text">
+                        A living room where you can relax comfortably on the
+                        sofa. One bedroom is Japanese while the other is
+                        Western. In a large garden you can sit on the veranda
+                        and relax.
+                      </p>
+                      <p class="info-active-title-sub">Guest Access</p>
+                      <p class="info-active-text">
+                        Guests can use whole house.
+                      </p>
+                      <p class="info-active-title-sub">Licence Number</p>
+                      <p class="info-active-text">M130002484</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- hotel summary -->
+              <div class="view-card-item-head">
+                <p>
+                  An integrated resort that comprises three 55-storey towers of
+                  extravagant rooms and luxury suites with personal butler
+                  services.
+                </p>
+              </div>
+              <!-- hotel highlights -->
+              <div class="view-card-item-highlights">
+                <div><p>Highlights</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>Shopping mall and casino.</li>
+                    <li>Excellent view of skyline.</li>
+                    <li>Rooftop bar and dance club.</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- hotel facilities -->
+              <div class="view-card-item-facilities">
+                <div><p>Facilities</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>WiFi</li>
+                    <li>Balcony</li>
+                    <li>Gym</li>
+                    <li>Pool</li>
+                  </ul>
+                  <ul>
+                    <li>Laundry</li>
+                    <li>Microwave</li>
+                    <li>Bar</li>
+                    <li>Refrigerator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="view-card-item-empty"></div>
+              <!-- hotel name and room -->
+              <div class="view-card-item-name">
+                <p>Marina Bay Sands Singapore - Standard Twin Room</p>
+              </div>
+              <!-- hotel book button -->
+              <a class="view-card-item-book" href="#">
+                <p>BOOK</p>
+              </a>
+            </div>
+          </article>
+        </article>
+        <!-- END of one individual hotel -->
+
+        <!-- START of one individual hotel - HOTEL13 -->
+        <!-- hotel icon in map area -->
+        <article class="view-icon13">
+          <div class="view-icon-container">
+            <div class="view-icon-item-px"><p>$365</p></div>
+            <div class="view-icon-item-star">
+              <img
+                src="svg/star-full.svg"
+                alt="Star icon fully colored."
+                title=""
+              />
+            </div>
+            <div class="view-icon-item-rating"><p>4.8</p></div>
+          </div>
+
+          <!-- hotel card area -->
+          <article class="view-card">
+            <div class="view-card-container">
+              <!-- hotel photos -->
+              <div class="view-card-item-photo">
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel1.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel2.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel3.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel4.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel5.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel6.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel7.jpg" alt="" title="" />
+                </div>
+                <div class="view-card-item-photo-select"></div>
+                <div class="view-card-item-photo-select-active">
+                  <img src="img/hotel8.jpg" alt="" title="" />
+                </div>
+                <!-- hotel info -->
+                <div class="view-card-item-photo-info">
+                  <p>i</p>
+                </div>
+                <div class="view-card-item-photo-info-active">
+                  <div class="info-active-container">
+                    <div class="info-active-title">
+                      <p class="info-active-title-text">About This Space</p>
+                      <hr class="info-active-line" />
+                    </div>
+                    <div class="info-active-left">
+                      <p class="info-active-text">
+                        Hideout Villa located nearby Hatonosu Valley which is
+                        the one of the best scenic spots in Okutama. Enjoy your
+                        tranquil moment surrounded by beauties of nature.
+                      </p>
+                      <p class="info-active-text">
+                        奥多摩有数の景勝地である鳩ノ巣渓谷のそばにある別荘をまるまる貸し切り。四季折々の自然が織りなす美しい景色に囲まれて、誰にも邪魔されない楽しい時間を過ごしてみませんか?
+                      </p>
+                    </div>
+                    <div class="info-active-right">
+                      <p class="info-active-title-sub">The Room</p>
+                      <p class="info-active-text">
+                        A living room where you can relax comfortably on the
+                        sofa. One bedroom is Japanese while the other is
+                        Western. In a large garden you can sit on the veranda
+                        and relax.
+                      </p>
+                      <p class="info-active-title-sub">Guest Access</p>
+                      <p class="info-active-text">
+                        Guests can use whole house.
+                      </p>
+                      <p class="info-active-title-sub">Licence Number</p>
+                      <p class="info-active-text">M130002484</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- hotel summary -->
+              <div class="view-card-item-head">
+                <p>
+                  An integrated resort that comprises three 55-storey towers of
+                  extravagant rooms and luxury suites with personal butler
+                  services.
+                </p>
+              </div>
+              <!-- hotel highlights -->
+              <div class="view-card-item-highlights">
+                <div><p>Highlights</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>Shopping mall and casino.</li>
+                    <li>Excellent view of skyline.</li>
+                    <li>Rooftop bar and dance club.</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- hotel facilities -->
+              <div class="view-card-item-facilities">
+                <div><p>Facilities</p></div>
+                <div class="view-card-item-box">
+                  <ul>
+                    <li>WiFi</li>
+                    <li>Balcony</li>
+                    <li>Gym</li>
+                    <li>Pool</li>
+                  </ul>
+                  <ul>
+                    <li>Laundry</li>
+                    <li>Microwave</li>
+                    <li>Bar</li>
+                    <li>Refrigerator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="view-card-item-empty"></div>
+              <!-- hotel name and room -->
+              <div class="view-card-item-name">
+                <p>Marina Bay Sands Singapore - Standard Twin Room</p>
+              </div>
+              <!-- hotel book button -->
+              <a class="view-card-item-book" href="#">
+                <p>BOOK</p>
+              </a>
+            </div>
+          </article>
+        </article>
+        <!-- END of one individual hotel -->
+      </main>
+
+      <!-- START of one individual hotel - HOTEL14 -->
+      <!-- hotel icon in map area -->
+      <article class="view-icon14">
+        <div class="view-icon-container">
+          <div class="view-icon-item-px"><p>$980</p></div>
+          <div class="view-icon-item-star">
+            <img
+              src="svg/star-full.svg"
+              alt="Star icon fully colored."
+              title=""
+            />
+          </div>
+          <div class="view-icon-item-rating"><p>4.9</p></div>
+        </div>
+
+        <!-- hotel card area -->
+        <article class="view-card">
+          <div class="view-card-container">
+            <!-- hotel photos -->
+            <div class="view-card-item-photo">
+              <div class="view-card-item-photo-select"></div>
+              <div class="view-card-item-photo-select-active">
+                <img src="img/hotel1.jpg" alt="" title="" />
+              </div>
+              <div class="view-card-item-photo-select"></div>
+              <div class="view-card-item-photo-select-active">
+                <img src="img/hotel2.jpg" alt="" title="" />
+              </div>
+              <div class="view-card-item-photo-select"></div>
+              <div class="view-card-item-photo-select-active">
+                <img src="img/hotel3.jpg" alt="" title="" />
+              </div>
+              <div class="view-card-item-photo-select"></div>
+              <div class="view-card-item-photo-select-active">
+                <img src="img/hotel4.jpg" alt="" title="" />
+              </div>
+              <div class="view-card-item-photo-select"></div>
+              <div class="view-card-item-photo-select-active">
+                <img src="img/hotel5.jpg" alt="" title="" />
+              </div>
+              <div class="view-card-item-photo-select"></div>
+              <div class="view-card-item-photo-select-active">
+                <img src="img/hotel6.jpg" alt="" title="" />
+              </div>
+              <div class="view-card-item-photo-select"></div>
+              <div class="view-card-item-photo-select-active">
+                <img src="img/hotel7.jpg" alt="" title="" />
+              </div>
+              <div class="view-card-item-photo-select"></div>
+              <div class="view-card-item-photo-select-active">
+                <img src="img/hotel8.jpg" alt="" title="" />
+              </div>
+              <!-- hotel info -->
+              <div class="view-card-item-photo-info">
+                <p>i</p>
+              </div>
+              <div class="view-card-item-photo-info-active">
+                <div class="info-active-container">
+                  <div class="info-active-title">
+                    <p class="info-active-title-text">About This Space</p>
+                    <hr class="info-active-line" />
+                  </div>
+                  <div class="info-active-left">
+                    <p class="info-active-text">
+                      Hideout Villa located nearby Hatonosu Valley which is the
+                      one of the best scenic spots in Okutama. Enjoy your
+                      tranquil moment surrounded by beauties of nature.
+                    </p>
+                    <p class="info-active-text">
+                      奥多摩有数の景勝地である鳩ノ巣渓谷のそばにある別荘をまるまる貸し切り。四季折々の自然が織りなす美しい景色に囲まれて、誰にも邪魔されない楽しい時間を過ごしてみませんか?
+                    </p>
+                  </div>
+                  <div class="info-active-right">
+                    <p class="info-active-title-sub">The Room</p>
+                    <p class="info-active-text">
+                      A living room where you can relax comfortably on the sofa.
+                      One bedroom is Japanese while the other is Western. In a
+                      large garden you can sit on the veranda and relax.
+                    </p>
+                    <p class="info-active-title-sub">Guest Access</p>
+                    <p class="info-active-text">Guests can use whole house.</p>
+                    <p class="info-active-title-sub">Licence Number</p>
+                    <p class="info-active-text">M130002484</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- hotel summary -->
+            <div class="view-card-item-head">
+              <p>
+                An integrated resort that comprises three 55-storey towers of
+                extravagant rooms and luxury suites with personal butler
+                services.
+              </p>
+            </div>
+            <!-- hotel highlights -->
+            <div class="view-card-item-highlights">
+              <div><p>Highlights</p></div>
+              <div class="view-card-item-box">
+                <ul>
+                  <li>Shopping mall and casino.</li>
+                  <li>Excellent view of skyline.</li>
+                  <li>Rooftop bar and dance club.</li>
+                </ul>
+              </div>
+            </div>
+            <!-- hotel facilities -->
+            <div class="view-card-item-facilities">
+              <div><p>Facilities</p></div>
+              <div class="view-card-item-box">
+                <ul>
+                  <li>WiFi</li>
+                  <li>Balcony</li>
+                  <li>Gym</li>
+                  <li>Pool</li>
+                </ul>
+                <ul>
+                  <li>Laundry</li>
+                  <li>Microwave</li>
+                  <li>Bar</li>
+                  <li>Refrigerator</li>
+                </ul>
+              </div>
+            </div>
+            <div class="view-card-item-empty"></div>
+            <!-- hotel name and room -->
+            <div class="view-card-item-name">
+              <p>Marina Bay Sands Singapore - Standard Twin Room</p>
+            </div>
+            <!-- hotel book button -->
+            <a class="view-card-item-book" href="#">
+              <p>BOOK</p>
+            </a>
+          </div>
+        </article>
+      </article>
+      <!-- END of one individual hotel -->
+
+      <!-- footer part -->
+      <footer>
+        <section id="foot">
+          <article id="foot-copyright">
+            <p>&#169; 2021 HotelBook, Inc. All rights reserved</p>
+            <p>·</p>
+            <p>Privacy</p>
+            <p>·</p>
+            <p>Terms</p>
+            <p>·</p>
+            <p>Sitemap</p>
+          </article>
+          <article id="foot-country">
+            <img src="svg/language.svg" alt="" title="" />
+            <p>English (SG)</p>
+            <img src="svg/dollar.svg" alt="" title="" />
+            <p>SGD</p>
+          </article>
+        </section>
+      </footer>
+    </div>
+  </body>
+</html>

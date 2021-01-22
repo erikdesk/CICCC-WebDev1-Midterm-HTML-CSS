@@ -1,0 +1,447 @@
+/* hotel1 */
+.view-icon1 {
+  transition: 0.5s all;
+  position: absolute;
+  top: 80px;
+  left: 100px;
+  background-color: white;
+  border: 1px solid lightslategrey;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.view-icon1:hover {
+  transition: 0.5s all;
+  background-color: #272727;
+  cursor: url(/img/cursor-round-white.svg) 6 6, pointer;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.view-icon1:hover .view-icon-item-px,
+.view-icon1:hover .view-icon-item-rating {
+  transition: 0.5s all;
+  color: white;
+}
+
+.view-icon1:hover .view-card {
+  display: block;
+  position: absolute;
+  top: -40px;
+  left: 40px;
+}
+
+/* hotel2 */
+.view-icon2 {
+  transition: 0.5s all;
+  position: absolute;
+  top: 140px;
+  left: 120px;
+  background-color: white;
+  border: 1px solid lightslategrey;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.view-icon2:hover {
+  transition: 0.5s all;
+  background-color: #272727;
+  cursor: url(/img/cursor-round-white.svg) 6 6, pointer;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.view-icon2:hover .view-icon-item-px,
+.view-icon2:hover .view-icon-item-rating {
+  transition: 0.5s all;
+  color: white;
+}
+
+.view-icon2:hover .view-card {
+  display: block;
+  position: absolute;
+  top: -40px;
+  left: 40px;
+}
+
+/* hotel3 */
+.view-icon3 {
+  transition: 0.5s all;
+  position: absolute;
+  top: 90px;
+  left: 420px;
+  background-color: white;
+  border: 1px solid lightslategrey;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.view-icon3:hover {
+  transition: 0.5s all;
+  background-color: #272727;
+  cursor: url(/img/cursor-round-white.svg) 6 6, pointer;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.view-icon3:hover .view-icon-item-px,
+.view-icon3:hover .view-icon-item-rating {
+  transition: 0.5s all;
+  color: white;
+}
+
+.view-icon3:hover .view-card {
+  display: block;
+  position: absolute;
+  top: 34px;
+  left: -200px;
+}
+
+/* hotel4 */
+.view-icon4 {
+  transition: 0.5s all;
+  position: absolute;
+  top: 280px;
+  left: 330px;
+  background-color: white;
+  border: 1px solid lightslategrey;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.view-icon4:hover {
+  transition: 0.5s all;
+  background-color: #272727;
+  cursor: url(/img/cursor-round-white.svg) 6 6, pointer;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.view-icon4:hover .view-icon-item-px,
+.view-icon4:hover .view-icon-item-rating {
+  transition: 0.5s all;
+  color: white;
+}
+
+.view-icon4:hover .view-card {
+  display: block;
+  position: absolute;
+  top: 34px;
+  left: -200px;
+}
+
+/* hotel5 */
+.view-icon5 {
+  transition: 0.5s all;
+  position: absolute;
+  top: 600px;
+  left: 130px;
+  background-color: white;
+  border: 1px solid lightslategrey;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.view-icon5:hover {
+  transition: 0.5s all;
+  background-color: #272727;
+  cursor: url(/img/cursor-round-white.svg) 6 6, pointer;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.view-icon5:hover .view-icon-item-px,
+.view-icon5:hover .view-icon-item-rating {
+  transition: 0.5s all;
+  color: white;
+}
+
+.view-icon5:hover .view-card {
+  display: block;
+  position: absolute;
+  top: -300px;
+  left: 40px;
+}
+
+/* hotel6 */
+.view-icon6 {
+  transition: 0.5s all;
+  position: absolute;
+  top: 220px;
+  left: 420px;
+  background-color: white;
+  border: 1px solid lightslategrey;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.view-icon6:hover {
+  transition: 0.5s all;
+  background-color: #272727;
+  cursor: url(/img/cursor-round-white.svg) 6 6, pointer;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.view-icon6:hover .view-icon-item-px,
+.view-icon6:hover .view-icon-item-rating {
+  transition: 0.5s all;
+  color: white;
+}
+
+.view-icon6:hover .view-card {
+  display: block;
+  position: absolute;
+  top: 34px;
+  left: -200px;
+}
+
+/* hotel7 */
+.view-icon7 {
+  transition: 0.5s all;
+  position: absolute;
+  top: 70px;
+  left: 800px;
+  background-color: white;
+  border: 1px solid lightslategrey;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.view-icon7:hover {
+  transition: 0.5s all;
+  background-color: #272727;
+  cursor: url(/img/cursor-round-white.svg) 6 6, pointer;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.view-icon7:hover .view-icon-item-px,
+.view-icon7:hover .view-icon-item-rating {
+  transition: 0.5s all;
+  color: white;
+}
+
+.view-icon7:hover .view-card {
+  display: block;
+  position: absolute;
+  top: -40px;
+  left: -598px;
+}
+
+/* hotel8 */
+.view-icon8 {
+  transition: 0.5s all;
+  position: absolute;
+  top: 260px;
+  left: 450px;
+  background-color: white;
+  border: 1px solid lightslategrey;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.view-icon8:hover {
+  transition: 0.5s all;
+  background-color: #272727;
+  cursor: url(/img/cursor-round-white.svg) 6 6, pointer;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.view-icon8:hover .view-icon-item-px,
+.view-icon8:hover .view-icon-item-rating {
+  transition: 0.5s all;
+  color: white;
+}
+
+.view-icon8:hover .view-card {
+  display: block;
+  position: absolute;
+  top: 34px;
+  left: -200px;
+}
+
+/* hotel9 */
+.view-icon9 {
+  transition: 0.5s all;
+  position: absolute;
+  top: 60px;
+  left: 500px;
+  background-color: white;
+  border: 1px solid lightslategrey;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.view-icon9:hover {
+  transition: 0.5s all;
+  background-color: #272727;
+  cursor: url(/img/cursor-round-white.svg) 6 6, pointer;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.view-icon9:hover .view-icon-item-px,
+.view-icon9:hover .view-icon-item-rating {
+  transition: 0.5s all;
+  color: white;
+}
+
+.view-icon9:hover .view-card {
+  display: block;
+  position: absolute;
+  top: 34px;
+  left: -200px;
+}
+
+/* hotel10 */
+.view-icon10 {
+  transition: 0.5s all;
+  position: absolute;
+  top: 180px;
+  left: 320px;
+  background-color: white;
+  border: 1px solid lightslategrey;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.view-icon10:hover {
+  transition: 0.5s all;
+  background-color: #272727;
+  cursor: url(/img/cursor-round-white.svg) 6 6, pointer;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.view-icon10:hover .view-icon-item-px,
+.view-icon10:hover .view-icon-item-rating {
+  transition: 0.5s all;
+  color: white;
+}
+
+.view-icon10:hover .view-card {
+  display: block;
+  position: absolute;
+  top: 34px;
+  left: -200px;
+}
+
+/* hotel11 */
+.view-icon11 {
+  transition: 0.5s all;
+  position: absolute;
+  top: 500px;
+  left: 720px;
+  background-color: white;
+  border: 1px solid lightslategrey;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.view-icon11:hover {
+  transition: 0.5s all;
+  background-color: #272727;
+  cursor: url(/img/cursor-round-white.svg) 6 6, pointer;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.view-icon11:hover .view-icon-item-px,
+.view-icon11:hover .view-icon-item-rating {
+  transition: 0.5s all;
+  color: white;
+}
+
+.view-icon11:hover .view-card {
+  display: block;
+  position: absolute;
+  top: -366px;
+  left: -440px;
+}
+
+/* hotel12 */
+.view-icon12 {
+  transition: 0.5s all;
+  position: absolute;
+  top: 400px;
+  left: 700px;
+  background-color: white;
+  border: 1px solid lightslategrey;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.view-icon12:hover {
+  transition: 0.5s all;
+  background-color: #272727;
+  cursor: url(/img/cursor-round-white.svg) 6 6, pointer;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.view-icon12:hover .view-icon-item-px,
+.view-icon12:hover .view-icon-item-rating {
+  transition: 0.5s all;
+  color: white;
+}
+
+.view-icon12:hover .view-card {
+  display: block;
+  position: absolute;
+  top: -300px;
+  left: -598px;
+}
+
+/* hotel13 */
+.view-icon13 {
+  transition: 0.5s all;
+  position: absolute;
+  top: 450px;
+  left: 670px;
+  background-color: white;
+  border: 1px solid lightslategrey;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.view-icon13:hover {
+  transition: 0.5s all;
+  background-color: #272727;
+  cursor: url(/img/cursor-round-white.svg) 6 6, pointer;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.view-icon13:hover .view-icon-item-px,
+.view-icon13:hover .view-icon-item-rating {
+  transition: 0.5s all;
+  color: white;
+}
+
+.view-icon13:hover .view-card {
+  display: block;
+  position: absolute;
+  top: -366px;
+  left: -440px;
+}
+
+/* hotel14 */
+.view-icon14 {
+  transition: 0.5s all;
+  position: absolute;
+  top: 550px;
+  left: 660px;
+  background-color: white;
+  border: 1px solid lightslategrey;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.view-icon14:hover {
+  transition: 0.5s all;
+  background-color: #272727;
+  cursor: url(/img/cursor-round-white.svg) 6 6, pointer;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.view-icon14:hover .view-icon-item-px,
+.view-icon14:hover .view-icon-item-rating {
+  transition: 0.5s all;
+  color: white;
+}
+
+.view-icon14:hover .view-card {
+  display: block;
+  position: absolute;
+  top: -366px;
+  left: -440px;
+}
