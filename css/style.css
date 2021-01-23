@@ -316,7 +316,7 @@ footer {
 #top-drop:hover {
   transition: 0.75s all;
   background-color: #ce6c36;
-  cursor: url(/svg/cursor-round-black.svg) 6 6, pointer;
+  cursor: url(../svg/cursor-round-black.svg) 6 6, pointer;
 }
 
 #top-drop-search:hover {
@@ -381,7 +381,7 @@ footer {
 #top-profile:hover {
   transition: 0.75s all;
   background-color: #ce6c36;
-  cursor: url(/svg/cursor-round-black.svg) 6 6, pointer;
+  cursor: url(../svg/cursor-round-black.svg) 6 6, pointer;
 }
 
 #top-profile-select:hover {
@@ -461,7 +461,7 @@ footer {
 
 .view-card:hover {
   transition: 0.5s all;
-  cursor: url(/svg/cursor-round-black.svg) 6 6, pointer;
+  cursor: url(../svg/cursor-round-black.svg) 6 6, pointer;
   opacity: 1;
   transition-duration: 0.5s;
 }
@@ -471,7 +471,7 @@ footer {
   display: flex;
   justify-content: center; /* main-axis */
   align-items: flex-end; /* cross-axis */
-  background: url(/img/hotel-default.jpg) no-repeat;
+  background: url(../img/hotel-default.jpg) no-repeat;
   background-size: 600px 240px;
 }
 
@@ -490,7 +490,7 @@ footer {
   transition: 0.5s all;
   background-color: white;
   border: 1px solid rgba(39, 39, 39, 0.5);
-  cursor: url(/svg/cursor-round-black.svg) 6 6, pointer;
+  cursor: url(../svg/cursor-round-black.svg) 6 6, pointer;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -694,8 +694,8 @@ footer {
   grid-row: 3 / span 2;
   height: 28px;
   width: 100px;
-  background: url(/svg/shop-black.svg) no-repeat,
-    url(/img/orange.jpg) left top repeat;
+  background: url(../svg/shop-black.svg) no-repeat,
+    url(../img/orange.jpg) left top repeat;
   background-position: right 6px bottom 1px, top left;
   background-size: 26px, 100%;
   border-radius: 10px 0 0 0px;
@@ -711,8 +711,8 @@ footer {
 }
 
 .view-card-item-book:hover {
-  background: url(/svg/shop-white.svg) no-repeat,
-    url(/img/orange.jpg) left top repeat;
+  background: url(../svg/shop-white.svg) no-repeat,
+    url(../img/orange.jpg) left top repeat;
   background-position: right 6px bottom 1px, top left;
   background-size: 26px, 100%;
   color: white;
