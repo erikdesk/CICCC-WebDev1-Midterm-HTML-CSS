@@ -332,6 +332,41 @@ footer {
   right: 116px;
 }
 
+#top-wireframes {
+  grid-row: 2;
+  grid-column: 3;
+  display: flex;
+  justify-content: center; /* main-axis */
+  align-items: center; /* cross-axis */
+}
+
+#top-wireframes-box {
+  transition: 0.5s all;
+  height: 18px;
+  width: 18px;
+  margin: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  background-color: #272727;
+  z-index: 4;
+}
+
+#top-wireframes-box:hover {
+  transition: 0.5s all;
+  background-color: white;
+  border: 1px solid rgba(39, 39, 39, 0.5);
+  cursor: url(../svg/cursor-round-black.svg) 6 6, pointer;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+#top-wireframes-box:active {
+  transition: 0.5s all;
+  background-color: #ce6c36;
+  border: 1px solid rgba(39, 39, 39, 0.5);
+  cursor: url(../svg/cursor-round-black.svg) 6 6, pointer;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
 #top-profile {
   grid-row: 2;
   grid-column: 4;
@@ -721,4 +756,12 @@ footer {
 .view-card-item-book:hover p {
   color: white;
   text-shadow: 0 0 3px rgba(255, 255, 255, 0.75);
+}
+
+.view-card-item-book:active {
+  background: url(../svg/shop-white.svg) no-repeat,
+    url(../img/black.jpg) left top repeat;
+  background-position: right 6px bottom 1px, top left;
+  background-size: 26px, 100%;
+  color: white;
 }
